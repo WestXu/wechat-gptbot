@@ -22,8 +22,7 @@ class Session(object):
         """
         session = Session.all_sessions.get(context.session_id, [])
         if len(session) == 0:
-            system_item = {"role": "developer", "content": context.system_prompt}
-            session.append(system_item)
+            system_item = {}
             Session.all_sessions[context.session_id] = session
         user_item = {"role": "user", "content": context.query}
         session.append(user_item)
